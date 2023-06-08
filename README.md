@@ -5,7 +5,7 @@ to interact with a [blues.io Notecard](https://blues.io/products/notecard/).
 
 This library uses the [serial-to-i2c bridge](// https://dev.blues.io/guides-and-tutorials/notecard-guides/serial-over-i2c-protocol/).
 
-** This library has a minimal surface and most messages have not been mapped to types. See [Notecard API](https://dev.blues.io/api-reference/notecard-api/introduction/) for a full list. **
+> This library has a minimal surface and most messages have not been mapped to types. See [Notecard API](https://dev.blues.io/api-reference/notecard-api/introduction/) for a full list.
 
 ## Setup
 
