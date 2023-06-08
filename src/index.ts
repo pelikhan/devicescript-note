@@ -1,4 +1,4 @@
-import { _dcfgString, deviceIdentifier } from "@devicescript/core"
+import { deviceIdentifier, isSimulator } from "@devicescript/core"
 import { I2CStatus, delay } from "@devicescript/core"
 import { I2CError, i2c } from "@devicescript/i2c"
 import { readSetting } from "@devicescript/settings"
@@ -274,6 +274,9 @@ export function requestQueueLength() {
  */
 export async function request<T extends Requests>(req: T): Promise<Response> {
     if (!req || !req.req) throw new Error("invalid request")
+
+    if (isSimulator()) return { err: "not supported in simulator", sim: true }
+
     if (pending.length > MAX_REQUEST_QUEUE) return { err: "request queue full" }
 
     // block until it's our turn to send a message
@@ -300,6 +303,8 @@ export async function request<T extends Requests>(req: T): Promise<Response> {
  * @param options optional overrides
  */
 export async function init(options?: Partial<HubSetRequest>) {
+    if (isSimulator()) return
+
     const req: HubSetRequest = {
         req: "hub.set",
         ...(options || {}),
