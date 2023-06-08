@@ -4,7 +4,7 @@ import { I2CError, i2c } from "@devicescript/i2c"
 import { readSetting } from "@devicescript/settings"
 
 function debug(msg: string) {
-    console.debug(`notes> ` + msg)
+    //console.debug(`notes> ` + msg)
 }
 
 /**
