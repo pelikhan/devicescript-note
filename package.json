@@ -1,6 +1,6 @@
 {
+    "name": "devicescript-note",
     "version": "0.0.0",
-    "private": "Please use 'yarn devs add npm' to make this a publishable package",
     "dependencies": {},
     "devDependencies": {
         "@devicescript/cli": "latest"
@@ -15,5 +15,22 @@
         "test:devicescript": "devicescript run src/main.ts --test --test-self-exit",
         "test": "npm run test:devicescript",
         "start": "npm run watch"
+    },
+    "main": "./src/index.ts",
+    "license": "MIT",
+    "devicescript": {
+        "library": true
+    },
+    "files": [
+        "src/*.ts",
+        "devsconfig.json"
+    ],
+    "keywords": [
+        "devicescript"
+    ],
+    "author": "pelikhan <jhalleux@microsoft.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pelikhan/devicescript-note.git"
     }
 }
